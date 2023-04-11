@@ -1,9 +1,11 @@
+//Components
+import SearchBar from "./Components/SearchBar/SearchBar"
+
 function App() {
+
   return (
-    <div className="App">
-      <h1>
-        Home
-      </h1>
+    <div>
+      <SearchBar />
     </div>
   )
 }
