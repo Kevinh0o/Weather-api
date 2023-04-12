@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react'
 
+//Routes
+import { Link } from 'react-router-dom'
+
 //Styles
 import { Wrap } from './styles'
 
@@ -38,12 +41,13 @@ const SearchBar = () => {
             { data  && data.map(a =>{
                 return(
                     <li key={a.id}>
-                        <h1>
+                        <Link to={'/weather/' + a.name}>
                             {a.name}
-                        </h1>
-                        <h2>
+                        </Link>
+
+                        <p>
                             {a.country}
-                        </h2>
+                        </p>
                     </li>
                 )
             })}
