@@ -9,17 +9,20 @@ import Main from './Pages/Main/Main'
 import NoPage from './Pages/NoPage/NoPage'
 import Weather from './Pages/Weather/Weather'
 
+//Styles
+import { Wrap } from './styles'
+
 function App() {
 
   return (
-    <div>
+    <Wrap>
       <SearchBar />
       <Routes>
         <Route path='/' element={ <Main /> } />
         <Route path='/weather/:id' element={ <Weather /> } />
         <Route path='/*' element={ <NoPage /> } />
       </Routes>
-    </div>
+    </Wrap>
   )
 }
 
