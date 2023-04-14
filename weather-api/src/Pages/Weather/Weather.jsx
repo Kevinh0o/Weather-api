@@ -5,9 +5,10 @@ import useFetch from "../../Hooks/useFetch";
 
 //Components
 import CurrentWeahterBox from '../../Components/Visual/CurrentWeahterBox/CurrentWeahterBox'
+import NextWeatherBox from "../../Components/Visual/NextWeatherBox/NextWeatherBox";
 
 // Styles
-import { Wrap } from './styles'
+import { Wrap, FlexContainer } from './styles'
 
 const Weather = () => {
   const params = useParams()
@@ -17,6 +18,11 @@ const Weather = () => {
     <Wrap>
         { params.id }
         <CurrentWeahterBox />
+        <FlexContainer>
+          <NextWeatherBox />
+          <NextWeatherBox />
+          <NextWeatherBox />
+        </FlexContainer>
     </Wrap>
   )
 }

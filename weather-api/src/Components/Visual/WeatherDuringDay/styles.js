@@ -11,22 +11,17 @@ export const Wrap = styled.div `
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    background-color: aliceblue;
 `;
 
 export const Icon = styled.div `
     height: 70%;
     width: 100%;
-
-    background-color: white;
 `;
 
 export const Text = styled.div `
     width: 100%;
 
     text-align: center;
-    background-color: white;
 `;
 
 

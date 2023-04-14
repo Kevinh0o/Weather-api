@@ -12,6 +12,29 @@ export const Wrap = styled.div `
 
 export const Header = styled.div `
     height: 20%;
+    text-align: center;
+
+    .WeatherIcon{
+        width: 33%;
+    }
+    img{
+        width: 100px;
+        position: relative;
+        top: 30px;
+    }
+`;
+
+export const FlexContainer = styled.div `
+    display: flex;
+    justify-content: space-between;
+`;
+
+export const TemperatureText = styled.div `
+    width: 33%;
+`;
+
+export const AditionalInfo = styled.div `
+    width: 33%;
 `;
 
 export const Body = styled.div `
@@ -37,8 +60,6 @@ export const ScrollX = styled.div `
     justify-content: space-between;
 
     border-radius: 35px;
-
-    background-color: blue;
 
     overflow-x: scroll;
 `;
