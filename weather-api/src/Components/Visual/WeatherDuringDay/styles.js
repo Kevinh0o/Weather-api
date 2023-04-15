@@ -13,9 +13,9 @@ export const Wrap = styled.div `
     align-items: center;
 `;
 
-export const Icon = styled.div `
-    height: 70%;
+export const IconContainer = styled.div `
     width: 100%;
+    height: 60%;
 `;
 
 export const Text = styled.div `

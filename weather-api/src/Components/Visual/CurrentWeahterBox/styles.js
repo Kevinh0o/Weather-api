@@ -5,7 +5,6 @@ export const Wrap = styled.div `
     height: 430px;
 
     border-radius: 35px;
-    box-shadow: 0px 10px 20px 0px grey;
 
     background-color: #92E5FF;
 `;
@@ -22,6 +21,10 @@ export const Header = styled.div `
         position: relative;
         top: 30px;
     }
+`;
+
+export const IconContainer = styled.div`
+    width: 33%;
 `;
 
 export const FlexContainer = styled.div `
@@ -41,7 +44,13 @@ export const Body = styled.div `
     height: 80%;
     width: 100%;
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     border-radius: 35px;
+    border: 1px solid #C0C0C0;
+    border-top: 0px;
 
     background-color: white;
 `;
@@ -53,8 +62,8 @@ export const Title = styled.div `
 `;
 
 export const ScrollX = styled.div `
-    height: 70%;
-    width: 100%;
+    height: 65%;
+    width: 90%;
 
     display: flex;
     justify-content: space-between;
@@ -62,6 +71,20 @@ export const ScrollX = styled.div `
     border-radius: 35px;
 
     overflow-x: scroll;
+    
+    ::-webkit-scrollbar {
+        height: 8px;
+    }
+ 
+    ::-webkit-scrollbar-track {
+        background-color: #D9D9D9;
+        border-radius: 50px;
+    }
+ 
+    ::-webkit-scrollbar-thumb {
+        background-color: #848484;
+        border-radius: 50px;
+    }
 `;
 
 

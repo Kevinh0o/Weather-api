@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
 export const Wrap = styled.div `
-    width: 33%;
+    width: 100%;
 
-    img{
-        width: 100px;
+    img{ 
         position: relative;
         top: 30px;
     }

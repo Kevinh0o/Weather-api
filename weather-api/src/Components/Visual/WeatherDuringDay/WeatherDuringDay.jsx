@@ -1,12 +1,25 @@
-//Styles
-import { Wrap, Icon } from './styles'
+//Components
+import Icon from '../Icon/Icon'
 
-const WeatherDuringDay = () => {
+//Styles
+import { Wrap, IconContainer } from './styles'
+
+const WeatherDuringDay = ( props ) => {
+  const date = new Date(props.hour)
+  var hours = date.getHours()
+
   return (
     <Wrap>
-      <Icon />
-      <p> 00: 00 </p>
-      <p> AM </p>
+
+      <IconContainer>
+        <Icon
+          variation={props.condition.text}
+          size={'medium'}
+        />
+      </IconContainer>
+
+      <p> {props.temp}° </p>
+      <p> {hours}:00 </p>
     </Wrap>
   )
 }

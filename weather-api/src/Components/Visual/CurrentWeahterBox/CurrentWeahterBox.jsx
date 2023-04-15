@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 //Components
 import WeatherDuringDay from '../WeatherDuringDay/WeatherDuringDay'
 import Icon from '../Icon/Icon'
@@ -10,10 +12,14 @@ import { Wrap,
   ScrollX, 
   FlexContainer,
   TemperatureText,
-  AditionalInfo
+  AditionalInfo,
+  IconContainer
 } from './styles'
 
+
 const CurrentWeahterBox = ( props ) => {
+  const dayData =  props.weather.forecast.forecastday
+  const weatherDuringDay = dayData[0].hour
 
   const date = new Date(props.weather.location.localtime)
   var hours = date.getHours()
@@ -26,13 +32,15 @@ const CurrentWeahterBox = ( props ) => {
     <Wrap>
       <Header>
         <FlexContainer>
-          <Icon
-          variation={props.weather.current.condition.text}
-          size={'big'}
-          />
+          <IconContainer>
+            <Icon
+              variation={props.weather.current.condition.text}
+              size={'big'}
+            />
+          </IconContainer>
           <TemperatureText>
             <h1>
-              {props.weather.current.temp_c}
+              {props.weather.current.temp_c}°
             </h1>
           </TemperatureText>
           <AditionalInfo>
@@ -49,7 +57,17 @@ const CurrentWeahterBox = ( props ) => {
           <p> {props.weather.location.country} </p>
         </Title>
         <ScrollX>
-          <WeatherDuringDay />
+          { weatherDuringDay.map(a =>{
+              return(
+                <WeatherDuringDay
+                key={a.time}
+
+                temp={a.temp_c}
+                hour={a.time}
+                condition={a.condition}
+                />
+              )
+          })}
         </ScrollX>
       </Body>
     </Wrap>

@@ -15,6 +15,8 @@ const Weather = () => {
   const weather = useFetch( 'forecast.json?', params.id, '&days=7&aqi=no&alerts=no' ) // tempo de 7 dias, sem qualidade do ar, sem alertas
   console.log(weather)
 
+
+
   return (
     <Wrap>
         { weather.data != undefined &&
@@ -24,9 +26,17 @@ const Weather = () => {
             <CurrentWeahterBox weather={weather.data} />
 
             <FlexContainer>
-              <NextWeatherBox />
-              <NextWeatherBox />
-              <NextWeatherBox />
+              { weather.data.forecast.forecastday.map(a =>{
+                return(
+                  <NextWeatherBox
+                  key={a.date}
+                  day={a.date}
+                  maxTemp={a.day.maxtemp_c}
+                  minTemp={a.day.mintemp_c}
+                  condition={a.day.condition.text}
+                  />
+                )
+            })}
             </FlexContainer>
           </div>
         }

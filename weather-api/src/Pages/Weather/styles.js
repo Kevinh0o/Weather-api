@@ -6,5 +6,5 @@ export const FlexContainer = styled.div `
     margin-top: 35px;
     
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 `;
