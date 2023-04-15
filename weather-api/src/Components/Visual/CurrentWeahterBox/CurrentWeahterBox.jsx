@@ -1,5 +1,6 @@
 //Components
 import WeatherDuringDay from '../WeatherDuringDay/WeatherDuringDay'
+import Icon from '../Icon/Icon'
 
 //Styles
 import { Wrap, 
@@ -12,27 +13,32 @@ import { Wrap,
   AditionalInfo
 } from './styles'
 
-//Assets
-import Icon from '../../../../public/clear.svg'
-
 const CurrentWeahterBox = ( props ) => {
+
+  const date = new Date(props.weather.location.localtime)
+  var hours = date.getHours()
+  var minutes = date.getMinutes()
+
+  var daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  var dayOfWeek = daysOfWeek[date.getDay()];
 
   return (
     <Wrap>
       <Header>
         <FlexContainer>
-          <div className='WeatherIcon'>
-            <img src={Icon} />
-          </div>
+          <Icon
+          variation={props.weather.current.condition.text}
+          size={'big'}
+          />
           <TemperatureText>
             <h1>
               {props.weather.current.temp_c}
             </h1>
           </TemperatureText>
           <AditionalInfo>
-            <p> Dom </p>
+            <p> { dayOfWeek } </p>
             <p> {props.weather.current.condition.text} </p>
-            <p> 12:00 AM </p>
+            <p> { hours }:{ minutes } </p>
           </AditionalInfo>
         </FlexContainer>
       </Header>
