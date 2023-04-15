@@ -15,7 +15,8 @@ import { Wrap,
 //Assets
 import Icon from '../../../../public/clear.svg'
 
-const CurrentWeahterBox = () => {
+const CurrentWeahterBox = ( props ) => {
+
   return (
     <Wrap>
       <Header>
@@ -24,37 +25,24 @@ const CurrentWeahterBox = () => {
             <img src={Icon} />
           </div>
           <TemperatureText>
-            <h1> 
-              23
+            <h1>
+              {props.weather.current.temp_c}
             </h1>
           </TemperatureText>
           <AditionalInfo>
             <p> Dom </p>
-            <p> Clear </p>
+            <p> {props.weather.current.condition.text} </p>
             <p> 12:00 AM </p>
           </AditionalInfo>
         </FlexContainer>
       </Header>
       <Body>
         <Title>
-          <h1> Porto Alegre </h1>
-          <p> Rio Grande do Sul </p>
-          <p> Brazil </p>
+          <h1> {props.weather.location.name} </h1>
+          <p> {props.weather.location.region} </p>
+          <p> {props.weather.location.country} </p>
         </Title>
         <ScrollX>
-          <WeatherDuringDay />
-          <WeatherDuringDay />
-          <WeatherDuringDay />
-          <WeatherDuringDay />
-          <WeatherDuringDay />
-          <WeatherDuringDay />
-          <WeatherDuringDay />
-          <WeatherDuringDay />
-          <WeatherDuringDay />
-          <WeatherDuringDay />
-          <WeatherDuringDay />
-          <WeatherDuringDay />
-          <WeatherDuringDay />
           <WeatherDuringDay />
         </ScrollX>
       </Body>
