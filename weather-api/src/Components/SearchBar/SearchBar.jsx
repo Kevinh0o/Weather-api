@@ -6,6 +6,9 @@ import { Link } from 'react-router-dom'
 //Styles
 import { Wrap } from './styles'
 
+//Animations
+import { motion } from "framer-motion"
+
 const SearchBar = ( props ) => {
     const [ data, setData ] = useState([])
     const [ isVisible, setVisibility ] = useState(false)
@@ -41,6 +44,7 @@ const SearchBar = ( props ) => {
 
   return (
     <Wrap onMouseLeave={ VisibilityOff }>
+
         <input
         placeholder='Search'
         onChange={ handleChange }
@@ -51,10 +55,30 @@ const SearchBar = ( props ) => {
 
         <div>
             { isVisible && (
-                <ul>
+                <motion.ul 
+                    initial={{
+                        y: 2,
+                        opacity: 0
+                    }}
+                    animate={{
+                        y: 0,
+                        opacity: 1
+                    }}
+                >
                     { data &&  data.map(a =>{
                         return(
-                            <li key={a.id}>
+                            <motion.li
+                                key={a.id}
+                                initial={{
+                                    y: 0,
+                                    opacity: 0
+                                }}
+                                transition={{ delay: 0.1}}
+                                animate={{
+                                    y: 2,
+                                    opacity: 1
+                                }}
+                            >
                                 <Link to={'/weather/' + a.name} onClick={ VisibilityOff }>
                                     {a.name}
                                 </Link>
@@ -62,10 +86,10 @@ const SearchBar = ( props ) => {
                                 <p>
                                     {a.country}
                                 </p>
-                            </li>
+                            </motion.li>
                         )
                     })}
-                </ul>
+                </motion.ul>
             )}
         </div>
     </Wrap>

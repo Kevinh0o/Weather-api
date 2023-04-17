@@ -7,7 +7,7 @@ import { Wrap } from './styles'
 import Clear from '../../../../public/clear.svg'
 import HeavyRain from '../../../../public/heavy_rain.svg'
 import Overcast from '../../../../public/overcast.svg'
-import RainA from '../../../../public/rain_sun.svg'
+import LightRain from '../../../../public/light_rain.svg'
 import RainB from '../../../../public/rain.svg'
 
 const Icon = ( props ) => {
@@ -18,8 +18,21 @@ const Icon = ( props ) => {
     switch( props.variation ){
       case 'Clear' : setVariation( Clear )
         break;
-      case 'Overcast', 'Partly cloudy' : setVariation( Overcast )
+      case 'Overcast' : setVariation( Overcast )
         break;
+      case 'Partly cloudy' : setVariation( Overcast )
+        break;
+      case 'Mist' : setVariation( Overcast )
+        break;
+      case 'Patchy light drizzle' : setVariation( Overcast )
+        break;
+      case 'Cloudy' : setVariation( Overcast )
+        break;
+      case 'Light rain shower' : setVariation( LightRain )
+        break;
+      case 'Patchy rain possible' : setVariation( LightRain )
+        break;
+      default : setVariation( Clear )
     }
 
     switch( props.size ){

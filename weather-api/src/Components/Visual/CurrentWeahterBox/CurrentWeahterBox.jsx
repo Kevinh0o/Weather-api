@@ -16,6 +16,9 @@ import { Wrap,
   IconContainer
 } from './styles'
 
+//Animations
+import { motion } from 'framer-motion'
+
 
 const CurrentWeahterBox = ( props ) => {
   const dayData =  props.weather.forecast.forecastday
@@ -29,7 +32,19 @@ const CurrentWeahterBox = ( props ) => {
   var dayOfWeek = daysOfWeek[date.getDay()];
 
   return (
-    <Wrap>
+    <Wrap as={motion.div}
+    initial={{
+      y: 2,
+      opacity: 0
+    }}
+    animate={{
+      y: 0,
+      opacity: 1
+    }}
+    transition={{
+     delay: 0.3
+    }}
+    >
       <Header>
         <FlexContainer>
           <IconContainer>

@@ -1,21 +1,37 @@
+//Components
+import Icon from '../Icon/Icon'
+
 //Styles
 import { Wrap, Header, Body, IconContainer } from './styles'
 
-//Components
-import Icon from '../Icon/Icon'
+//Animations
+import { motion } from 'framer-motion'
+
 
 const NextWeatherBox = ( props ) => {
   const date = new Date(props.day)
   var daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  var dayOfWeek = daysOfWeek[date.getDay()];
+  var dayOfWeek = daysOfWeek[date.getUTCDay()];
 
   return (
-    <Wrap>
+    <Wrap as={ motion.div }
+      initial={{
+        y: 2,
+        opacity: 0
+      }}
+      animate={{
+        y: 0,
+        opacity: 1
+      }}
+      transition={{
+      delay: 0.3
+      }}
+    >
       <Header>
         <IconContainer>
           <Icon
             size={'medium'}
-            variation={'Clear'}
+            variation={props.condition}
           />
         </IconContainer>
       </Header>
