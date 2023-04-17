@@ -21,8 +21,6 @@ const Weather = () => {
     <Wrap>
         { weather.data != undefined &&
           <div>
-            { params.id }
-
             <CurrentWeahterBox weather={weather.data} />
 
             <FlexContainer>

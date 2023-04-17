@@ -39,19 +39,25 @@ const CurrentWeahterBox = ( props ) => {
             />
           </IconContainer>
           <TemperatureText>
-            <h1>
+            <p className='number'>
               {props.weather.current.temp_c}°
-            </h1>
+            </p>
           </TemperatureText>
           <AditionalInfo>
-            <p> { dayOfWeek } </p>
-            <p> {props.weather.current.condition.text} </p>
-            <p> { hours }:{ minutes } </p>
+            <p className='week'>
+              { dayOfWeek } 
+            </p>
+            <p className='condition'> 
+              {props.weather.current.condition.text} 
+            </p>
+            <p className='time'>
+              { hours }:{ minutes } 
+            </p>
           </AditionalInfo>
         </FlexContainer>
       </Header>
       <Body>
-        <Title>
+        <Title className='gradient-text'>
           <h1> {props.weather.location.name} </h1>
           <p> {props.weather.location.region} </p>
           <p> {props.weather.location.country} </p>

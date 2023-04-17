@@ -20,9 +20,15 @@ const NextWeatherBox = ( props ) => {
         </IconContainer>
       </Header>
       <Body>
-        <p> {props.maxTemp} </p>
-        <p> {props.minTemp} </p>
-        <p> { dayOfWeek } </p>
+        <div className='max-temp'>
+        <p>{props.maxTemp}°</p>
+        </div>
+        <div className='min-temp'>
+        <p>{props.minTemp}°</p>
+        </div>
+        <div className='day'> 
+          <p>{ dayOfWeek }</p>
+        </div>
       </Body>
 
     </Wrap>

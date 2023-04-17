@@ -11,6 +11,12 @@ export const Wrap = styled.div `
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    p{
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
 `;
 
 export const IconContainer = styled.div `

@@ -22,11 +22,19 @@ const SearchBar = () => {
 
     function handleChange(e){
         if(e.target.value == ''){
-
+            VisibilityOff()
         }
         else{
+            VisibilityOn()
             fetchData(url + e.target.value)
         }
+    }
+
+    function VisibilityOff(){
+        setVisibility(false)
+    }
+    function VisibilityOn(){
+        setVisibility(true)
     }
 
   return (
@@ -37,22 +45,25 @@ const SearchBar = () => {
         >
         </input>
 
-        <ul>
-            { data  && data.map(a =>{
-                return(
-                    <li key={a.id}>
-                        <Link to={'/weather/' + a.name}>
-                            {a.name}
-                        </Link>
+        { isVisible && (
+            <ul>
+                { data &&  data.map(a =>{
+                    return(
+                        <li key={a.id}
+                        onClick={ VisibilityOff }
+                        >
+                            <Link to={'/weather/' + a.name}>
+                                {a.name}
+                            </Link>
 
-                        <p>
-                            {a.country}
-                        </p>
-                    </li>
-                )
-            })}
-        </ul>
-
+                            <p>
+                                {a.country}
+                            </p>
+                        </li>
+                    )
+                })}
+            </ul>
+        )}
     </Wrap>
   )
 }
