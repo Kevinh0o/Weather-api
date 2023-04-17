@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 //Router
 import { Routes, Route} from 'react-router-dom'
 
@@ -17,11 +19,11 @@ function App() {
   return (
     <Wrap>
       <SearchBar />
-      <Routes>
-        <Route path='/' element={ <Main /> } />
-        <Route path='/weather/:id' element={ <Weather /> } />
-        <Route path='/*' element={ <NoPage /> } />
-      </Routes>
+            <Routes>
+              <Route path='/' element={ <Main /> } />
+              <Route path='/weather/:id' element={ <Weather /> } />
+              <Route path='/*' element={ <NoPage /> } />
+            </Routes>
     </Wrap>
   )
 }
