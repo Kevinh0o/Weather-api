@@ -10,7 +10,7 @@ const useFetch = (method, city, aditionalInfo) => {
 
     useEffect(()=>{
         setLoading(false)
-        fetch( baseUrl + method + 'key=' + key + city + aditionalInfo )
+        fetch( baseUrl + method + 'key=' + key + '&q=' + city + aditionalInfo )
         .then( response => response.json() )
         .then( json => setData(json), setLoading(true))
         .catch( err => setError(err) )
