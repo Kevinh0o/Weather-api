@@ -14,7 +14,7 @@ const SearchBar = ( props ) => {
     const [ isVisible, setVisibility ] = useState(false)
     const key = import.meta.env.VITE_REACT_APP_API_KEY
     //const url = 'http://api.weatherapi.com/v1/search.json?key=34f5d0c181ad438da72130319232103&q='
-    const url = 'http://api.weatherapi.com/v1/search.json?key=' + key + '&q='
+    const url = 'https://api.weatherapi.com/v1/search.json?key=' + key + '&q='
 
     console.log(data)
 
