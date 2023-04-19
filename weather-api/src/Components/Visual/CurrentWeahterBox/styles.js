@@ -1,18 +1,25 @@
 import styled from "styled-components";
 
 export const Wrap = styled.div `
-    width: 600px;
+    width: 650px;
     height: 430px;
 
     border-radius: 35px;
 
     background: rgb(182,124,255);
     background: linear-gradient(0deg, rgba(182,124,255,1) 77%, rgba(0,212,255,1) 100%);
+
+    @media screen and (max-width: 612px){
+        width: 90vw;
+        height: 500px;
+    }
 `;
 
 export const Header = styled.div `
     height: 20%;
     text-align: center;
+
+    padding: 10px;
     
     text-shadow: 1px 4px 7px rgba(0,0,0, 0.30);
 
@@ -22,7 +29,13 @@ export const Header = styled.div `
     img{
         width: 100px;
         position: relative;
-        top: 30px;
+        top: 0px;
+    }
+    @media screen and (max-width: 612px){
+        img{
+            top: 10px;
+            left: 0px;
+        }
     }
 `;
 
@@ -35,6 +48,18 @@ export const FlexContainer = styled.div `
     
     display: flex;
     justify-content: space-between;
+
+    @media screen and (max-width: 612px){
+        .order:nth-child(1) {
+        order: 2;
+        }
+        .order:nth-child(2) {
+        order: 1;
+        }
+        .order:nth-child(3) {
+        order: 3;
+        }
+    }
 `;
 
 export const TemperatureText = styled.div `
@@ -53,6 +78,13 @@ export const TemperatureText = styled.div `
         font-size: 30px;
         position: relative;
         top: 20px;
+    }
+
+    @media screen and (max-width: 430px){
+        .number{
+            font-size: 40px;
+            align-self: center;
+        }
     }
 `;
 
@@ -117,6 +149,10 @@ export const Title = styled.div `
     }
     p{
         font-size: 16px;
+    }
+
+    @media screen and (max-width: 612px){
+        justify-content: end;
     }
 `;
 

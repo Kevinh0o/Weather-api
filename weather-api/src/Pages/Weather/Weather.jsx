@@ -20,7 +20,7 @@ const Weather = () => {
   return (
     <Wrap>
         { weather.data != undefined &&
-          <div>
+          <div className="center">
             <CurrentWeahterBox weather={weather.data} />
 
             <FlexContainer>

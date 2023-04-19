@@ -46,10 +46,10 @@ const SearchBar = ( props ) => {
     <Wrap onMouseLeave={ VisibilityOff }>
 
         <input
-        placeholder='Search'
-        onChange={ handleChange }
-        onFocus={ VisibilityOn }
-        onClick={ VisibilityOn }
+            placeholder='Search'
+            onChange={ handleChange }
+            onFocus={ VisibilityOn }
+            onClick={ VisibilityOn }
         >
         </input>
 

@@ -4,6 +4,8 @@ export const Wrap = styled.div `
     margin-bottom: 20px;
     height: max-content;
 
+
+
     input{
         width: 255px;
         height: 43px;

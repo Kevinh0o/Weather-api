@@ -7,4 +7,14 @@ export const FlexContainer = styled.div `
     
     display: flex;
     justify-content: space-between;
+
+    @media screen and (max-width: 612px){
+        width: 90vw;
+
+        .center{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    }
 `;

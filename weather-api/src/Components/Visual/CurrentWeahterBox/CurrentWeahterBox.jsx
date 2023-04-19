@@ -47,18 +47,18 @@ const CurrentWeahterBox = ( props ) => {
     >
       <Header>
         <FlexContainer>
-          <IconContainer>
+          <IconContainer className='order'>
             <Icon
               variation={props.weather.current.condition.text}
               size={'big'}
             />
           </IconContainer>
-          <TemperatureText>
+          <TemperatureText className='order'>
             <p className='number'>
               {props.weather.current.temp_c}°
             </p>
           </TemperatureText>
-          <AditionalInfo>
+          <AditionalInfo className='order'>
             <p className='week'>
               { dayOfWeek } 
             </p>

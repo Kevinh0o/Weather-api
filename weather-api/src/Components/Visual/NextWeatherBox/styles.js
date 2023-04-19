@@ -8,6 +8,10 @@ export const Wrap = styled.div `
 
     background: rgb(182,124,255);
     background: linear-gradient(0deg, rgba(182,124,255,1) 77%, rgba(0,212,255,1) 100%);
+
+    @media screen and (max-width: 612px){
+        width: 25vw;
+    }
 `;
 
 export const Header = styled.div `

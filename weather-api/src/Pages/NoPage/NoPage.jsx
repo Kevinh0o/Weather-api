@@ -2,7 +2,7 @@ const NoPage = () => {
 
   return (
     <div>
-        404 No page
+        Something went wrong. Please try again. :)
     </div>
   )
 }

@@ -8,11 +8,9 @@ import GlobalStyle from './global'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <GlobalStyle />
     <BrowserRouter>
-
-      <GlobalStyle />
       <App />
-
     </BrowserRouter>
   </React.StrictMode>,
 )
