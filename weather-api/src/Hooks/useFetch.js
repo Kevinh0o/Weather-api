@@ -6,7 +6,7 @@ const useFetch = (method, city, aditionalInfo) => {
     const [ loading, setLoading ] = useState(false)
 
     const baseUrl = 'http://api.weatherapi.com/v1/'
-    const key = 'key=34f5d0c181ad438da72130319232103&q='
+    const key = import.meta.env.VITE_REACT_APP_API_KEY
 
     useEffect(()=>{
         setLoading(false)
