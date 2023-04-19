@@ -5,12 +5,12 @@ const useFetch = (method, city, aditionalInfo) => {
     const [ error, setError ] = useState()
     const [ loading, setLoading ] = useState(false)
 
-    const baseUrl = 'https://api.weatherapi.com/v1/'
+    const baseUrl = 'http://api.weatherapi.com/v1/'
     const key = import.meta.env.VITE_REACT_APP_API_KEY
 
     useEffect(()=>{
         setLoading(false)
-        fetch( baseUrl + method + key + city + aditionalInfo )
+        fetch( baseUrl + method + 'key=' + key + city + aditionalInfo )
         .then( response => response.json() )
         .then( json => setData(json), setLoading(true))
         .catch( err => setError(err) )
