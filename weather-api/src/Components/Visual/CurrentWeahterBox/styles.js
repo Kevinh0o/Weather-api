@@ -23,9 +23,6 @@ export const Header = styled.div `
     
     text-shadow: 1px 4px 7px rgba(0,0,0, 0.30);
 
-    .WeatherIcon{
-        width: 33%;
-    }
     img{
         width: 100px;
         position: relative;
@@ -41,6 +38,9 @@ export const Header = styled.div `
 
 export const IconContainer = styled.div`
     width: 33%;
+    @media screen and (max-width: 612px){
+        width: 66%;
+    }
 `;
 
 export const FlexContainer = styled.div `

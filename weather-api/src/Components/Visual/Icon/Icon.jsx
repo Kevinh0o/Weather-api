@@ -4,11 +4,11 @@ import { useEffect, useState } from 'react'
 import { Wrap } from './styles'
 
 //Assets
-import Clear from '../../../../public/clear.svg'
-import HeavyRain from '../../../../public/heavy_rain.svg'
-import Overcast from '../../../../public/overcast.svg'
-import LightRain from '../../../../public/light_rain.svg'
-import RainB from '../../../../public/rain.svg'
+import Clear from '/public/clear.png'
+import HeavyRain from '/heavy_rain.png'
+import Overcast from '/overcast.png'
+import LightRain from '/light_rain.png'
+import RainB from '/rain.png'
 
 const Icon = ( props ) => {
   const [ variation, setVariation ] = useState()

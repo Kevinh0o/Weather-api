@@ -13,9 +13,6 @@ import { Wrap, FlexContainer } from './styles'
 const Weather = () => {
   const params = useParams()
   const weather = useFetch( 'forecast.json?', params.id, '&days=7&aqi=no&alerts=no' ) // tempo de 7 dias, sem qualidade do ar, sem alertas
-  console.log(weather)
-
-
 
   return (
     <Wrap>

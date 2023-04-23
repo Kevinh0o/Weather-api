@@ -16,8 +16,6 @@ const SearchBar = ( props ) => {
     //const url = 'http://api.weatherapi.com/v1/search.json?key=34f5d0c181ad438da72130319232103&q='
     const url = 'https://api.weatherapi.com/v1/search.json?key=' + key + '&q='
 
-    console.log(data)
-
     async function fetchData(url){
         fetch(url)
             .then( response => response.json() )
