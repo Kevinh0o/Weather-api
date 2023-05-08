@@ -1,7 +1,6 @@
 # Weather API
 Aplicativo que motra a previsão do tempo de qualquer lugar do mundo.
 
-<img src="./calcule-tudo.png" />
 <img src="./1.png" />
 <img src="./2.png" />
 
